@@ -1,0 +1,42 @@
+{
+    "$schema": "https://raw.githubusercontent.com/devcontainers/spec/main/schemas/devContainer.base.schema.json",   
+    "name":"Priyanshu GenAI Cohort Dev Container",
+    "dockerComposeFile": "docker-compose.yaml",
+    "service": "app",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+    "runServices": ["app", "mongo", "valkey"],
+    "remoteUser": "root",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+               "ms-python.python",
+               "ms-python.black-formatter",
+               "eamodio.gitlens",
+               "j-powers.autocoding",
+               "KevinRose.vsc-python-indent",
+               "esbenp.prettier-vscode",
+               "usernamehw.errorlens",
+               "tamasfe.even-better-toml",
+               "aaron-bond.better-comments",
+               "ms-azuretools.vscode-docker",
+               "ms-python.flake8",
+               "ms-python.isort"
+            ]
+        },
+        "settings": {
+            "python.pythonPath": "/usr/local/bin/python",
+            "python.formatting.provider": "black",
+            "python.linting.enabled": true,
+            "python.linting.flake8Enabled": true,
+            "python.autoComplete.addBrackets": true,
+            "python.linting.flake8Args": [
+                "--max-line-length=88"
+            ],
+            "editor.formatOnSave": true,
+            "python.linting.pylintEnabled": false,
+            "python.testing.pytestEnabled": true,
+            "python.testing.unittestEnabled": false,
+            "python.testing.nosetestsEnabled": false
+        }
+    }
+}
